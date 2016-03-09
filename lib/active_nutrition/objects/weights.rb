@@ -6,7 +6,7 @@ module ActiveNutrition
       def to_hash(options = {})
         options[:by] ||= :measurement
         inject({}) do |ret, weight|
-          ret[weight.send(options[:by])] = weight.to_i.grams
+          ret[weight.send(options[:by])] = weight.grams.to_i
           ret
         end
       end
